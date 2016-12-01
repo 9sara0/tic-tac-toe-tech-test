@@ -1,6 +1,7 @@
 require "field"
 
 describe Field do
+  let(:occupier)  { double :occupier }
   subject(:field) { described_class.new(1,2)}
 
   context "when initialized" do
@@ -16,8 +17,21 @@ describe Field do
       expect(field).not_to be_taken
     end
 
-    it "has no letter" do
-      expect(field.letter).to be nil
+    it "has no occupier" do
+      expect(field.occupier).to be nil
+    end
+  end
+
+  describe "#occupy" do
+    it "occupies the fiels" do
+      field.occupy(occupier)
+      expect(field).to be_taken
+    end
+
+
+    it "saves the occupier's name" do
+      field.occupy(occupier)
+      expect(field.occupier).to be occupier
     end
   end
 end
