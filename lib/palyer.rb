@@ -7,6 +7,9 @@ class Player
     @name = name.upcase
   end
 
+
+
+
   private
 
   def is_o?(name)
