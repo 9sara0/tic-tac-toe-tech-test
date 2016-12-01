@@ -15,5 +15,9 @@ describe Field do
     it "is free" do
       expect(field).not_to be_taken
     end
+
+    it "has no letter" do
+      expect(field.letter).to be nil
+    end
   end
 end
