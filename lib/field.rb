@@ -4,5 +4,10 @@ class Field
   def initialize(x,y)
     @x = x
     @y = y
+    @taken = false
+  end
+
+  def taken?
+    @taken
   end
 end
